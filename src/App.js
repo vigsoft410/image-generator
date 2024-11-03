@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useState } from 'react';
+import PromptForm from './components/PromptForm';
 import './App.css';
 
 function App() {
+  const [image, setImage] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Gerador de Imagens com Stable Diffusion</h1>
+      <PromptForm setImage={setImage} />
+      
+      {image && (
+        <div>
+          <h2>Imagem Gerada:</h2>
+          <img src={image} alt="Imagem gerada pela IA" />
+        </div>
+      )}
     </div>
   );
 }
