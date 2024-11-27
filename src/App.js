@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState } from 'react';
+import React from 'react';
 import Home from './screens/HomeScreen/Index';
 import './App.css';
 
